@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="dkplayer-java/src/main/res/layout/dkplayer_layout_definition_item.xml" value="0.14175724637681159" />
+        <entry key="dkplayer-java/src/main/res/layout/dkplayer_layout_speed_item.xml" value="0.14175724637681159" />
+        <entry key="dkplayer-ui/src/main/res/layout/dkplayer_layout_vod_control_view.xml" value="0.14175724637681159" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

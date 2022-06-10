@@ -1,0 +1,5 @@
+include ':dkplayer-videocache'
+include ':dkplayer-players:ijk'
+include ':dkplayer-ui'
+include ':dkplayer-java'
+include ':app'
