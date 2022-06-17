@@ -44,7 +44,7 @@ public class VideoListActivity extends AppCompatActivity implements LocalVideoAd
     public static ArrayList<AnthologyBean> listPictures;
     public static String videoPath;
     public static int videopostion;//提供给播放页面的视频数据位置
-
+    private int checkedPostion = -1;
 
 
     @Override
@@ -81,6 +81,13 @@ public class VideoListActivity extends AppCompatActivity implements LocalVideoAd
      */
     @Override
     public void OnItemClick(ArrayList<AnthologyBean> localVideoBeans, int position) {
+//        if (checkedPostion!=-1){
+//            localVideoBeans.get(checkedPostion).setIschecked(false);
+//        }
+//        checkedPostion = position;
+        for (AnthologyBean anthologyBean:localVideoBeans) {
+            anthologyBean.setIschecked(false);
+        }
         localVideoBeans.get(position).setIschecked(true);//设置选集蒙版选中
         listPictures = localVideoBeans;
         videoPath = localVideoBeans.get(position).getPath();

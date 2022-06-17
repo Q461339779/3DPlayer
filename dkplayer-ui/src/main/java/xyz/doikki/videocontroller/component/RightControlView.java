@@ -3,20 +3,16 @@ package xyz.doikki.videocontroller.component;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
@@ -25,14 +21,11 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-import xyz.doikki.videocontroller.LogUtils;
 import xyz.doikki.videocontroller.R;
 import xyz.doikki.videocontroller.adapter.AnthologyBean;
 import xyz.doikki.videocontroller.adapter.MultiTypeAdapter;
 import xyz.doikki.videocontroller.adapter.SpeedBean;
 import xyz.doikki.videocontroller.adapter.Vistable;
-import xyz.doikki.videocontroller.callBack.IVideoInfoCallback;
-import xyz.doikki.videocontroller.handler.WeakHandler;
 import xyz.doikki.videocontroller.videoinfo.M3U8Seg;
 import xyz.doikki.videoplayer.controller.ControlWrapper;
 import xyz.doikki.videoplayer.controller.IControlComponent;
@@ -61,7 +54,10 @@ public class RightControlView extends FrameLayout implements IControlComponent, 
     private Context mContext;
 
     public static void setList(ArrayList<AnthologyBean> list) {
-        AnthologyBeanlist = list;
+        AnthologyBeanlist.addAll(list);
+//        if (mList != null){
+//            mList.clear();
+//        }
         mList.addAll(list);
     }
 
@@ -70,8 +66,8 @@ public class RightControlView extends FrameLayout implements IControlComponent, 
     public static ArrayList<Vistable> mList = new ArrayList<Vistable>();
     public static ArrayList<Vistable> mSpeedList = new ArrayList<Vistable>();
     //清晰度地址集合
-    private static List<Vistable> mResolutionList= new ArrayList<Vistable>();
-    private static List<M3U8Seg> M3U8SegBeanList= new ArrayList<M3U8Seg>();
+    public static List<Vistable> mResolutionList= new ArrayList<Vistable>();
+    public static List<M3U8Seg> M3U8SegBeanList= new ArrayList<M3U8Seg>();
     private boolean mIsShowBottomProgress = true;
 
     public RightControlView(@NonNull Context context) {

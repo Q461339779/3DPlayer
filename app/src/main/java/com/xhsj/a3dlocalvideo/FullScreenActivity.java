@@ -208,6 +208,13 @@ public class FullScreenActivity extends BaseActivity<VideoView> {
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+        //清楚数据避免重复数据
+        RightControlView.mList.clear();
+        RightControlView.mSpeedList.clear();
+        RightControlView.SpeedBeanlist.clear();
+        RightControlView.AnthologyBeanlist.clear();
+        RightControlView.mResolutionList.clear();
+        RightControlView.M3U8SegBeanList.clear();
     }
 
 
@@ -284,5 +291,7 @@ public class FullScreenActivity extends BaseActivity<VideoView> {
 //            Toast.makeText(this, "正在观看", Toast.LENGTH_SHORT).show();
 //        }
     }
+
+
 }
 
